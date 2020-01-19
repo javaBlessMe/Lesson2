@@ -1,7 +1,7 @@
 public class lesson2 {
     public static void main(String[] args) {
-    int[] a = {2510, -5, 3, 2, 1100, 4, 5, 2, 4, 8, 9, 1,435};
-     findMaxMin(a);
+    int[] a = {10, 1, 1, 2, 1,6};
+        System.out.println(findSum(a));
     }
     //first task
     private static int[] changeZeroOne (int[] a){
@@ -49,6 +49,7 @@ public class lesson2 {
       return multArr;
     }
 
+    //fifth task
     private static void findMaxMin(int[] a){
         int max =a[0], min =a[0];
         for (int i = 1; i <a.length ; i++) {
@@ -63,4 +64,33 @@ public class lesson2 {
         System.out.println("Минимальный элемент "+min);
 
     }
+
+  //sixth task
+    private static boolean findSum(int[] arr){
+        int elemtSumLeft;
+        int elemtSumRight;
+
+        for (int i = 0; i <arr.length ; i++) {
+            elemtSumLeft=0;
+            elemtSumRight=0;
+            //этот цикл разделителя, делит массив на две части
+
+            for (int j = 0; j <=i ; j++) {
+                //считаем сумму левой части
+            elemtSumLeft+=arr[j];
+            }
+            for (int j = i+1; j <arr.length ; j++) {
+                //считаем сумму правой части
+                elemtSumRight+=arr[j];
+            }
+
+            if(elemtSumLeft==elemtSumRight){
+
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }
