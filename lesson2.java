@@ -1,7 +1,10 @@
 public class lesson2 {
     public static void main(String[] args) {
-    int[] a = {10, 1, 1, 2, 1,6};
-        System.out.println(findSum(a));
+    int[] a = {100, 200, 300, 400, 500,600};
+        shiftArray(a,-2);
+        for (int b: a) {
+            System.out.print(" "+b);
+        }
     }
     //first task
     private static int[] changeZeroOne (int[] a){
@@ -95,16 +98,38 @@ public class lesson2 {
 
     //seventh
     private static int[] shiftArray(int[] arr, int shift){
-        while(shift>0){
-            int lastElement=arr[arr.length-1];
-            int shiftElement;
-              for (int i = 0; i <arr.length ; i++) {
-                  shiftElement = arr[i];
-                  arr[i] = lastElement;
-                  lastElement=shiftElement;
-              }
+        if(shift>0) {
+            while (shift > 0) {
+                int lastVar = arr[arr.length - 1];
+                for (int counter = 0; counter < arr.length; counter++) {
+
+                    int curVal = arr[counter];// запоминаем текущее значение элемента массива
+                    arr[counter] = lastVar; // присвоим первому значению массива последнее
+                    lastVar = curVal; //измненим последнее значение на предпоследнее
+                    // и аналогично дальше
+                }
+                shift--;
+            }
+            return arr;
         }
-        return arr;
+        else if(shift<0) {
+
+            while (shift < 0) {
+                int firstVar = arr[0];
+                for (int counter = arr.length-1; counter >=0; counter--) {
+                    int curVal = arr[counter];
+                    arr[counter] = firstVar;
+                    firstVar = curVal;
+                }
+                shift++;
+            }
+            return arr;
+        }
+        else  {
+            return arr;
+
+        }
     }
+
 
 }
