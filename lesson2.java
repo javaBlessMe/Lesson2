@@ -93,4 +93,18 @@ public class lesson2 {
         return false;
     }
 
+    //seventh
+    private static int[] shiftArray(int[] arr, int shift){
+        while(shift>0){
+            int lastElement=arr[arr.length-1];
+            int shiftElement;
+              for (int i = 0; i <arr.length ; i++) {
+                  shiftElement = arr[i];
+                  arr[i] = lastElement;
+                  lastElement=shiftElement;
+              }
+        }
+        return arr;
+    }
+
 }
