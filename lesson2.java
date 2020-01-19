@@ -1,6 +1,7 @@
 public class lesson2 {
     public static void main(String[] args) {
-
+    int[] a = {2510, -5, 3, 2, 1100, 4, 5, 2, 4, 8, 9, 1,435};
+     findMaxMin(a);
     }
     //first task
     private static int[] changeZeroOne (int[] a){
@@ -29,13 +30,14 @@ public class lesson2 {
         return arr;
     }
 
+    //fourth task
     private static int[][] multArr(int size){
         int[][] multArr = new int[size][size];
-        int a=size;
+
         for (int i = 0; i <size ; i++) {
 
             for (int j = 0; j <size ; j++) {
-                if(j==(size-i-1)) {
+                if(j==(size-i-1)) {  //потому что массив считается с 0
                     multArr[i][j] = 1;
                 }
                 else{
@@ -45,5 +47,20 @@ public class lesson2 {
             }
         }
       return multArr;
+    }
+
+    private static void findMaxMin(int[] a){
+        int max =a[0], min =a[0];
+        for (int i = 1; i <a.length ; i++) {
+            if(a[i]>max){
+                max=a[i];
+            }
+            if(a[i]<min){
+                min=a[i];
+            }
+        }
+        System.out.println("Максимальный элемент "+max);
+        System.out.println("Минимальный элемент "+min);
+
     }
 }
