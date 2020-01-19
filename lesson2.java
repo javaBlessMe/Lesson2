@@ -1,9 +1,6 @@
 public class lesson2 {
     public static void main(String[] args) {
-        int[] a = fillArray3();
-        for (int b: a) {
-            System.out.println(b);
-        }
+
     }
     //first task
     private static int[] changeZeroOne (int[] a){
@@ -30,5 +27,23 @@ public class lesson2 {
             if(arr[i]<6) arr[i]*=2;
         }
         return arr;
+    }
+
+    private static int[][] multArr(int size){
+        int[][] multArr = new int[size][size];
+        int a=size;
+        for (int i = 0; i <size ; i++) {
+
+            for (int j = 0; j <size ; j++) {
+                if(j==(size-i-1)) {
+                    multArr[i][j] = 1;
+                }
+                else{
+                    multArr[i][j] = 0;
+                }
+
+            }
+        }
+      return multArr;
     }
 }
