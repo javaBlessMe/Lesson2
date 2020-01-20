@@ -1,10 +1,14 @@
 public class lesson2 {
     public static void main(String[] args) {
     int[] a = {100, 200, 300, 400, 500,600};
-        shiftArray(a,-2);
+        changeZeroOne(a);
+
+
+       /* shiftArray(a,-2);
         for (int b: a) {
             System.out.print(" "+b);
-        }
+        }*/
+
     }
     //first task
     private static int[] changeZeroOne (int[] a){
@@ -43,9 +47,12 @@ public class lesson2 {
                 if(j==(size-i-1)) {  //потому что массив считается с 0
                     multArr[i][j] = 1;
                 }
-                else{
-                    multArr[i][j] = 0;
+                if(j==i){
+                    multArr[i][j] = 1;
                 }
+               /* else{
+                    multArr[i][j] = 0;
+                }*/
 
             }
         }
